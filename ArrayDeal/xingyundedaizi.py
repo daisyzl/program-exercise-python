@@ -25,4 +25,4 @@
 if __name__ == '__main__':
     n=input()
     x=input().split()
-    for 
+    for
