@@ -13,11 +13,20 @@
 '''
 
 if __name__ == '__main__':
+    # def select_sort(li):
+    #     cnt=len(li)
+    #     for i in range(cnt-1):
+    #         min_index=i
+    #         for j in range(i+1,cnt):
+    #             if li[min_index]>li[j]:
+    #                 li[min_index],li[j]=li[j],li[min_index]
+    #     return li
+
     def select_sort(li):
-        cnt=len(li)
-        for i in range(cnt-1):
+        # cnt=len(li)
+        for i in range(len(li)-1):
             min_index=i
-            for j in range(i+1,cnt):
+            for j in range(i+1,len(li)):
                 if li[min_index]>li[j]:
                     li[min_index],li[j]=li[j],li[min_index]
         return li

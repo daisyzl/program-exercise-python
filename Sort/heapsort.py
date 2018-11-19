@@ -1,10 +1,13 @@
 #-*-coding:utf-8-*-
 
 '''
-堆排序
+堆排序(排序中最难的)
 https://www.cnblogs.com/chengxiao/p/6129630.html
+原理
+大顶堆：arr[i] >= arr[2i+1] && arr[i] >= arr[2i+2]
 
 https://blog.csdn.net/aiya_aiya_/article/details/79846380
+实现
 '''
 
 def  HeapSort(ls):
@@ -31,7 +34,7 @@ def  HeapSort(ls):
         root-=1
     #掐掉堆顶后调整堆
     i=n-1
-    while(i>=0):
+    while(i>0):
         (ls[0],ls[i])=(ls[i],ls[0])  #将大顶堆堆顶数放到最后
         heapadjust(ls,0,i-1)    #调整剩余数组成的堆
         i-=1

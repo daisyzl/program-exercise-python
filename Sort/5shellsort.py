@@ -9,24 +9,24 @@
 https://blog.csdn.net/qq_35164554/article/details/79142939
 '''
 
-
-def shell_sort(alist):
-    n = len(alist)
-    gap = n // 2
-    while gap > 0:
-        for i in range(gap, n):
-            j = i
-            while j >= gap:
-                if alist[j] < alist[j - gap]:
-                    alist[j], alist[j - gap] = alist[j - gap], alist[j]
-                    j -= gap
-                    #为了计算被2整除不尽的
-                else:
-                    break
-        gap //= 2
-
-
 if __name__ == "__main__":
+    def shell_sort(alist):
+        n = len(alist)
+        gap = n // 2
+        while gap > 0:
+            for i in range(gap, n):
+                j = i
+                while j >= gap:
+                    if alist[j] < alist[j - gap]:
+                        alist[j], alist[j - gap] = alist[j - gap], alist[j]
+                        j -= gap
+                        #为了计算被2整除不尽的
+                    else:
+                        break
+            gap //= 2
+
+
+
     list1 = [5, 6, 7, 4, 9, 11, 20, 1,2]
     shell_sort(list1)
     print(list1)
