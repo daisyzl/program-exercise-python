@@ -23,6 +23,7 @@ if __name__ == '__main__':
         for i in range(1,k+1):
             C[i]=C[i]+C[i-1]
         for j in reversed(range(len(A))):
+            #把列表从后往前排序
             B[C[A[j]]-1]=A[j]
             C[A[j]]=C[A[j]]-1
         return B

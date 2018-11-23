@@ -1,38 +1,35 @@
 #-*-coding:utf-8-*-
 
 if __name__ == '__main__':
-    def heapsort(li):
-        def heapadjust(li,start,end):
-            temp=li[start]
-            son=start*2+1
-            while son<=end:
-                if son<end and li[son]<=li[son+1]:
-                    son=son+1
-                if temp>=li[son]:
+   def mergesort(li):
+       def adjustheap(li,start,end):
+           son=start*2+1
+           temp=li[start]
+           while son<=end:
+                if son<end and li[son]<li[son+1]:
+                   son=son+1
+                if li[son]<temp:
                     break
-                li[start]=li[son]
-                start=son
-                son=son*2+1
-            li[start]=temp
+                li[start] = li[son]
+                start = son
+                son = son * 2 + 1
+           li[start] = temp
 
-        if len(li)<=1:
-            return
+       n=len(li)
+       root=n//2-1
+       if n<=1:
+           return li
+       while root>=0:
+        adjustheap(li,root,n-1)
+        root-=1
 
-        root=len(li)//2-1
-        while(root>=0):
-            heapadjust(li,root,len(li)-1)
-            root-=1
-
-        i=len(li)-1
-        while(i>0):
-            li[i],li[0]=li[0],li[i]
-            heapadjust(li,0,i-1)
-            i=i-1
+        i=n-1
+        while i>=1:
+            li[0],li[i]=li[i],li[0]
+            i-=1
+            adjustheap(li,0,i)
         return li
 
-
-
-
-    li=[0,2,1,3,4,5,6,7,8,9,10,11,12,13,14]
-    print(heapsort(li))
+   li=[5, 6, 3, 2, 1, 65, 2, 0, 8, 0]
+   print(mergesort(li))
 

@@ -18,6 +18,7 @@ def  HeapSort(ls):
             if son<end and arr[son]<arr[son+1]:  #找出左右孩子节点较大的
                 son+=1
             if temp>=arr[son]:       #判断是否为大顶堆,如果子节点大于父节点，将子节点值赋给父节点（不用进行交换）
+               #注意这个使用temp不是arr[sart]
                 break
             arr[start]=arr[son]     #子节点上移
             start=son                     #继续向下比较
