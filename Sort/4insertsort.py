@@ -15,7 +15,7 @@ if __name__ == '__main__':
     def insert_sort(li):
         cnt=len(li)
         for i in range(1,cnt):
-            for j in range(i,0,-1):
+            for j in range(i,0,-1):#这里的迭代简单
                 if li[j]<li[j-1]:
                     li[j],li[j-1]=li[j-1],li[j]
                 else:
