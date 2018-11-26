@@ -15,7 +15,7 @@ if __name__ == '__main__':
     def quick_sort(li,low,high):
         if low>=high:
             return
-        #注意上面这个条件比较关键
+        #注意上面这个条件比较关键，迭代都有一个return 的条件
         left=low
         right=high
         x=li[low]
