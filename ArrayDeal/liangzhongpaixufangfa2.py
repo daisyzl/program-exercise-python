@@ -37,7 +37,7 @@ if __name__ == '__main__':
     a=[]
     for i in range(1,int(data[0])+1):
         a.append(data[i])
-    if a==sorted(a):
+    if a==sorted(a):#sorted默认按照字符串的字典顺序排序
         flag1=True
     if a==sorted(a,key=len):
         flag2=True

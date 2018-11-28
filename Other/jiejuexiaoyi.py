@@ -34,6 +34,7 @@ if __name__ == '__main__':
         result_list=[(x+y) for (x,y) in zip(a1,a2)]
         return min(result_list)-2
 
+
     data=sys.stdin.readlines()
     #读取输入数据，将每行以列表形式存储
     a1= [int(i) for i in data[1].split()]
@@ -41,3 +42,8 @@ if __name__ == '__main__':
 
     print(solution(a1,a2))
 
+'''
+zip函数接受任意多个可迭代对象作为参数,将对象中对应的元素打包成一个tuple,然后返回一个可迭代的zip对象.
+这个可迭代对象可以使用循环的方式列出其元素
+若多个可迭代对象的长度不一致,则所返回的列表与长度最短的可迭代对象相同.
+'''

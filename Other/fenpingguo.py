@@ -31,12 +31,13 @@ if __name__ == '__main__':
             if abs(i - average) % 2 != 0:
                 flag = 1
                 break
+    #前面这两步判断是否可以平均分苹果
 
     if flag == 1:
         print(-1)
     else:
         number = 0
         for i in cow:
-            if i > average:
+            if i > average:#只用计算大于平均值的分给其它奶牛
                 number += (i - average)
         print(number // 2)

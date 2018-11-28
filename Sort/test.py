@@ -1,35 +1,18 @@
 #-*-coding:utf-8-*-
+import sys
 
 if __name__ == '__main__':
-   def mergesort(li):
-       def adjustheap(li,start,end):
-           son=start*2+1
-           temp=li[start]
-           while son<=end:
-                if son<end and li[son]<li[son+1]:
-                   son=son+1
-                if li[son]<temp:
-                    break
-                li[start] = li[son]
-                start = son
-                son = son * 2 + 1
-           li[start] = temp
+    t = int(input())
+    n, k = [int(i) for i in input().split()]
+    for _ in range(t):
+        nums = input().split()
+        print(nums)
+        s = nums[:2 * n]
+        for _ in range(k):
+            nums[::2], nums[1::2] = nums[:n], nums[n:]
+            print(nums[::2])
+        print(' '.join(s))
+        # n = int(nums[-2])
+        # k = int(nums[-1])
 
-       n=len(li)
-       root=n//2-1
-       if n<=1:
-           return li
-       while root>=0:
-        adjustheap(li,root,n-1)
-        root-=1
-
-        i=n-1
-        while i>=1:
-            li[0],li[i]=li[i],li[0]
-            i-=1
-            adjustheap(li,0,i)
-        return li
-
-   li=[5, 6, 3, 2, 1, 65, 2, 0, 8, 0]
-   print(mergesort(li))
 

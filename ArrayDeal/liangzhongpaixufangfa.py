@@ -37,7 +37,7 @@ if __name__ == '__main__':
     flag2=True
     for i in range(cnt-1):
         s=input()
-        if s0>s and flag1:
+        if s0>s and flag1:#默认按照字符串排序
             flag1=False
         if len(s0)>len(s) and flag2:
             flag2=False

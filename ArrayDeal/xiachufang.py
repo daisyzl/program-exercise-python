@@ -31,3 +31,7 @@ if __name__ == '__main__':
     print(len(set(sourceslist)))
 
 #py.3中input（）只能输入一行  sys.stdin按下换行键然后ctrl+d程序结束
+
+#sys.stdin.readline( )会将标准输入全部获取，包括末尾的'\n'，因此用len计算长度时是把换行符'\n'算进去了的，但是input( )获取输入时返回的结果是不包含末尾的换行符'\n'的。
+
+#因此如果在平时使用sys.stdin.readline( )获取输入的话，不要忘了去掉末尾的换行符，可以用strip( )函数（sys.stdin.readline( ).strip('\n')）或sys.stdin.readline( )[:-1]这两种方法去掉换行。
