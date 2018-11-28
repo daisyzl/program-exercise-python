@@ -27,5 +27,5 @@ if __name__ == '__main__':
     result=[]
     for i in range(len(data)):
         print(data[i].split())
-        result.extend(data[i].split())
+        result.extend(data[i].split())#注意这里没有返回值，用extend不能用append
     print(len(set(result)))

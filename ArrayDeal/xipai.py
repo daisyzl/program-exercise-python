@@ -37,4 +37,6 @@ if __name__ == '__main__':
         for _ in range(k):
             nums[::2], nums[1::2] = nums[:n], nums[n:]#这一步很关键
             print(nums[::2])
+        print(nums)#['1', '4', '2', '5', '3', '6']
+        #注意：数字之间用空格隔开，不要在行末输出多余的空格，转换为字符串
         print(' '.join(nums))
