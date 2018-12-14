@@ -3,30 +3,27 @@ from random import randint
 
 if __name__ == '__main__':
     def heapsort(A,start,end):
-        if start>=end :
-            return A
+        if start>=end:
+            return
         temp=A[start]
         left=start
         right=end
+
         while left<right:
-            if left<right and A[right]>temp:
+            while left<right and temp<A[right]:
                 right-=1
             A[left]=A[right]
-            if left<right and A[left]<temp:
+            while left<right and temp>A[left]:
                 left+=1
             A[right]=A[left]
         A[left]=temp
-        heapsort(A,start,left-1)
-        heapsort(A,right+1,end)
-
-        return A
-
-
-
-
+        heapsort(A,0,left-1)
+        heapsort(A,left+1,end)
 
 
 
     li=[6,3,4,5,9,8,7]
-    n=max(li)
-    print(heapsort(li,0,len(li)-1))
+    end=len(li)-1
+    print(heapsort(li,0,end))
+    print(li)
+

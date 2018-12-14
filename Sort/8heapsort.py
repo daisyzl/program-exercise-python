@@ -14,7 +14,7 @@ def  HeapSort(ls):
     def heapadjust(arr,start,end):  #将以start为根节点的堆调整为大顶堆
         temp=arr[start]
         son=2*start+1
-        while son<=end:
+        while son<=end:#等于号是为了防止只有二叉树的左边
             if son<end and arr[son]<arr[son+1]:  #找出左右孩子节点较大的
                 son+=1
             if temp>=arr[son]:       #判断是否为大顶堆,如果子节点大于父节点，将子节点值赋给父节点（不用进行交换）
@@ -22,6 +22,12 @@ def  HeapSort(ls):
                 break
             arr[start]=arr[son]     #子节点上移
             start=son                     #继续向下比较
+            '''
+            arr[start]=arr[son]     #子节点上移
+            start=son 
+            注意二者的顺序不能颠倒
+            
+            '''
             son=2*son+1
         arr[start]=temp             #将原堆顶插入正确位置
 #######
@@ -31,7 +37,7 @@ def  HeapSort(ls):
     #建立大顶堆
     root=n//2-1    #最后一个非叶节点（完全二叉树中）,从第一个非叶子结点从下至上，从右至左调整结构
     while(root>=0):
-        heapadjust(ls,root,n)
+        heapadjust(ls,root,n-1)
         root-=1
     #掐掉堆顶后调整堆
     i=n-1
