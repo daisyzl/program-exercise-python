@@ -16,6 +16,8 @@
 
 https://leetcode-cn.com/problems/next-permutation/
 
+主要是记住该种思想
+
 '''
 
 class Solution:
