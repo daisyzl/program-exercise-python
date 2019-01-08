@@ -21,9 +21,9 @@ class Solution:
         :type strs: List[str]
         :rtype: str
         """
-
         if not strs:
-             return ""
+        #str="",打印这一行数据
+            return ""
         if len(strs) == 1:
             return strs[0]
         minl = min([len(x) for x in strs])
@@ -31,7 +31,9 @@ class Solution:
         while end < minl:
             for i in range(1,len(strs)):
                 if strs[i][end]!= strs[i-1][end]:
+                    #注意这是对列表→字符串的操作
                     return strs[0][:end]
+                #注意这个return语句和下面的return语句的区别
             end += 1
             print(strs[0][:end])
         return strs[0][:end]
