@@ -18,6 +18,8 @@
 
 如果两种方式都符合输出"both"，否则输出"none"
 
+这道题主要是学习这种编程思路
+
 示例1
 输入
 3
@@ -37,7 +39,7 @@ if __name__ == '__main__':
     a=[]
     for i in range(1,int(data[0])+1):
         a.append(data[i])
-    if a==sorted(a):#sorted默认按照字符串的字典顺序排序
+    if a==sorted(a):#sorted默认按照字符串的字典顺序排序，不能用x.sort（）因为会在原数组中进行更改
         flag1=True
     if a==sorted(a,key=len):
         flag2=True

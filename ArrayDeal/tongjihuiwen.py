@@ -43,6 +43,7 @@ if __name__ == '__main__':
     for i in range(len(A)):
         #range() 函数可创建一个整数列表，一般用在 for 循环中 range（0， 5） 是[0, 1, 2, 3, 4]没有5
         tmp=A[:i]+B+A[i:]
+        print(A[:i])
         if tmp==tmp[::-1]:
             cnt +=1
     tmp=A+B

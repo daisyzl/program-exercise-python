@@ -25,12 +25,17 @@ for each i ≥ 2: F[i] = F[i-1] + F[i-2]
 '''
 if __name__ == '__main__':
 
-    N = int(input())
+    # N = int(input())
+    N=15
     F0 = 0
     F1 = 1
     while N > F1:
-        temp = F0
-        F0 = F1
-        F1 = F1 + temp
+        # temp = F0
+        # F0 = F1
+        # F1 = F1 + temp
+        #两种方法均可
+        temp=F1
+        F1 = F1 + F0
+        F0 =temp
     step = min(abs(N-F1),abs(N-F0))
     print(step)

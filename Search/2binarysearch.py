@@ -18,22 +18,28 @@ def binarySearch(nums,target):
      if len(nums)==0:
          return -1
 
-     left,right=0,len(nums)
-     while left<right:
+     left, right = 0, len(nums)
+     cnt = 0
+     while left < right:
         mid = (left+right)//2
-        if nums[mid] ==target:
+        if nums[mid] == target:
             return mid
-        elif nums[mid]<target:
-             left=mid+1
+        elif nums[mid] < target:
+             left  = mid+1
         else:
-              right=mid
+              right = mid
+        cnt +=1
+        print("cnt", cnt)
+        print("left,right,mid",left, right, mid)
+        # print(nums[left], nums[right], nums[mid])
 
      if left !=len(nums) and nums[left]==target:
          return left
      return -1
 if __name__=='__main__':
-    nums=[1, 5, 7, 8, 22, 54, 99, 123, 200, 222, 444]
-    print(binarySearch(nums, 123))
+    nums=[1, 3, 5, 7, 8]
+    #数组一定是有序排列的
+    print(binarySearch(nums, 7))
 
 
 
