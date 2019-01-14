@@ -1,8 +1,10 @@
 #-*-coding:utf-8-*-
 '''
+打卡时间：2019.1.14
+
 长度最小的子数组
 
-思想：滑动窗口
+思想：双向指针，这个指针都是从头开始，向左向右
 时间复杂度：O(n）
 
 题目：
@@ -27,6 +29,7 @@ https://blog.csdn.net/qq_17550379/article/details/80540430
 
 
 class Solution():
+    #参考网上的
     def minSubArrayLen(self, nums, s):
         left ,right = 0, 0
         n = len(nums)
@@ -44,6 +47,23 @@ class Solution():
         if min_lenghth == n+1:
             return 0
         return min_lenghth
+
+    #自己完成的
+    def minSubArrayLen2(self, nums, s):
+        l, r = 0, 0
+        min_temp = len(nums)+1
+        while l<=r and r<len(nums):
+            #这个while循环有容易出错的地方，如果left < len(nums)会造成死循环,思考死循环的原因
+            if sum(nums[l:r+1]) >= s:
+                min_temp = min(min_temp, r-l+1)
+                l +=1
+            else:
+                r +=1
+        if min_temp == len(nums)+1:
+            return 0
+
+        return min_temp
+
 
 if __name__ == '__main__':
     nums = [2,3,1,2,4,3]

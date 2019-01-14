@@ -3,15 +3,21 @@
 归并排序
 
 https://www.cnblogs.com/Lin-Yi/p/7309143.html
+
+无法处理中间有重复数字的数组
+
 '''
 
 def merge_sort( li ):
     #不断递归调用自己一直到拆分成成单个元素的时候就返回这个元素，不再拆分了
+
+    #递归调用条件
     if len(li) <= 1:
         return li
 
     #取拆分的中间位置
     mid = len(li) // 2
+    #主要是拆成两部分
     #拆分过后左右两侧子串
     left = li[:mid]
     right = li[mid:]

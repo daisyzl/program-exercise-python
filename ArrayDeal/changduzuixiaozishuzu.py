@@ -13,7 +13,8 @@ https://leetcode-cn.com/explore/featured/card/all-about-array/233/sliding-window
 https://blog.csdn.net/qq_17550379/article/details/80540430
 
 
-给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的连续子数组。如果不存在符合条件的连续子数组，返回 0。
+给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的连续子数组。
+如果不存在符合条件的连续子数组，返回 0。
 
 示例:
 
@@ -42,7 +43,7 @@ class Solution():
         return  index_temp
     '''
 
-
+#网上的暴力方法
     def minSubArrayLen(self, nums, s):
         n = len(nums)
         index_temp = n + 1
@@ -56,6 +57,25 @@ class Solution():
         if index_temp == n + 1:
             return 0
         return index_temp
+
+
+#自己写的暴力方法
+    def minSubArrayLen2(self, nums, s):
+
+        min_length = len(nums)+1
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                if sum(nums[i:j+1])>=s:
+                    #切片的第二个索引不包含在切片内，所以要+1
+                    #这一点很重要
+                    print("i,j", i, j)
+                    print(nums[i],nums[j])
+                    print(j-i+1)
+                    min_length =min(min_length, j-i+1)
+
+        if min_length == len(nums)+1:
+            return 0
+        return min_length
 
 
 if __name__ == '__main__':
