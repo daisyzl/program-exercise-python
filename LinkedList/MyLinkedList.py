@@ -52,7 +52,7 @@ class MyLinkedList:
         :type index: int
         :rtype: int
         """
-        if self.length >= index or self.head is None:
+        if self.length <= index or self.head is None:
             return -1
         temp = self.head
         for i in range(index):
@@ -122,11 +122,11 @@ class MyLinkedList:
 
         else:
             if index < self.length:
-                temp =self.head
+                temp = self.head
                 for i in range(index):
                     if i == index-1:
                         temp.next = temp.next.next
-                    temp=temp.next
+                    temp = temp.next
                     self.length -= 1
 
 
@@ -152,11 +152,24 @@ if __name__ == '__main__':
 
         linkedList = MyLinkedList()
         linkedList.addAtHead(1)
+        temp = linkedList.head
+        while temp is not None:
+            print(temp.val)
+            temp = temp.next
+        # linkedList = linkedList.head
         linkedList.addAtTail(3)
+        temp = linkedList.head
+        while temp is not None:
+            print(temp.val)
+            temp = temp.next
         linkedList.addAtIndex(1, 2)
         #链表变为1-> 2-> 3
-        linkedList.get(1)
-        linkedList.deleteAtIndex(1)
-        #现在链表是1-> 3
-        linkedList.get(1)
+        temp = linkedList.head
+        while temp is not None:
+            print(temp.val)
+            temp = temp.next
+        # linkedList.get(1)
+        # linkedList.deleteAtIndex(1)
+        # #现在链表是1-> 3
+        # linkedList.get(1)
         #返回3
