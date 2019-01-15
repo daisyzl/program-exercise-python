@@ -1,5 +1,7 @@
 #-*-coding:utf-8-*-
 '''
+打卡时间：2019.01.14
+
 单链表
 
 https://leetcode-cn.com/explore/learn/card/linked-list/193/singly-linked-list/741/

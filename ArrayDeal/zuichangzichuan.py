@@ -55,7 +55,6 @@ def lengthOfLongestSubstring(s):
         # 比较此次循环的最大不重复子串长度和历史循环最大不重复子串长度
         max_len = max(max_len, one_max)
     return max_len
-
 if __name__ == '__main__':
 
     print (lengthOfLongestSubstring('pwwkew'))

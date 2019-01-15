@@ -66,7 +66,7 @@ class MyLinkedList:
             temp = self.head
             for i in range(index):
                 if i == index-1:
-                    temp = self.Node(val, temp.next)
+                    temp.next = self.Node(val, temp.next)
                 else:
                     temp =temp.next
         self.length +=1
@@ -83,7 +83,7 @@ class MyLinkedList:
             temp = self.head
             for i in range(index):
                 if i == index-1:
-                    temp = temp.next.next
+                    temp.next = temp.next.next
                 else:
                     temp = temp.next
         self.length -=1
@@ -120,3 +120,9 @@ if __name__ == '__main__':
     while temp is not None:
         print(temp.val)
         temp = temp.next
+    linkedList.deleteAtIndex(1)
+    temp = linkedList.head
+    while temp is not None:
+        print(temp.val)
+        temp = temp.next
+        #现在链表是1-> 3
