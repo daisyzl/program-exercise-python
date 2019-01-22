@@ -1,6 +1,7 @@
 #-*-coding:utf-8-*-
 '''
 寻找旋转排序数组中的最小值
+题目：https://leetcode-cn.com/explore/learn/card/binary-search/210/template-ii/842/
 
 
 
@@ -14,7 +15,7 @@ class Solution:
         """
         l, r = 0, len(nums)
         while l < r:
-            mid =(l+r)//2     
+            mid =(l+r)//2
             if nums[mid]<nums[mid+1]:
                 r = mid+1
             else:
