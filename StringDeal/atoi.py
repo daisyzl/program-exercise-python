@@ -67,13 +67,12 @@ class Solution:
             return 0
         result = int(s[:index])
         if result < 0:
-            return max()
             return max(-2147483648, result)
         else:
             return min(2147483647, result)
 
 
-        
+
 
 
 

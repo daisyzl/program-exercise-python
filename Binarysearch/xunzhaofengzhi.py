@@ -3,7 +3,7 @@
 '''
 寻找峰值
 
-复杂度：O(logN)   用二分法  只能使用第二种二分法
+复杂度：O(logN)   用二分法
 
 思想：由于两端都是负无穷，因此只要左右两端任一端比中点大，意味着那一侧有峰
 
@@ -37,13 +37,13 @@ class Solution():
     def findPeakElement(self, nums):
         left = 0
         right = len(nums)-1
-        while left < right:
+        while left <= right:
             mid = (left + right)//2
-            if nums[mid] <= nums[mid+1]:
+            if nums[mid] < nums[mid+1]:
                 #给定一个输入数组 nums，其中 nums[i] ≠ nums[i+1]
                 left = mid + 1
             else:
-                right = mid
+                right = mid - 1
         return left
 
 if __name__ == "__main__":

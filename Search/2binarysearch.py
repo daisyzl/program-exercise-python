@@ -2,7 +2,10 @@
 '''
 二分查找
 
-前提：线性表是要经过排序
+适用于它用于查找需要访问数组中当前索引及其
+直接右邻居索引的元素或条件
+
+
 
 https://leetcode-cn.com/explore/learn/card/binary-search/210/template-ii/839/
 
