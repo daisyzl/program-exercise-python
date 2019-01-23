@@ -16,7 +16,7 @@ class Solution:
         l, r = 0, len(nums)
         while l < r:
             mid =(l+r)//2
-            if nums[mid]<nums[mid+1]:
+            if nums[mid]<nums[r]:
                 r = mid+1
             else:
                 l = mid

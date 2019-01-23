@@ -2,10 +2,14 @@
 '''
 寻找数组的中心索引
 
-二分法 自己想的
-复杂度：O(logN)
+
+思想：可知道如果存在中心索引的话，那么左边的和的二倍，加上中心索引的值，即等于数组和
 
 题目：https://leetcode-cn.com/explore/learn/card/array-and-string/198/introduction-to-array/770/
+
+
+答案：
+https://blog.csdn.net/weixin_42026630/article/details/81146040
 
 给定一个整数类型的数组 nums，请编写一个能够返回数组“中心索引”的方法。
 
@@ -39,20 +43,15 @@ nums 的长度范围为 [0, 10000]。
 
 class Solution():
     def pivotIndex(self, nums):
-        if len(nums) <= 2:
-            return -1
-        left, right = 0,len(nums)-1
-        while left <= right:
-            mid = (left + right)//2
-            if sum(nums[:mid]) == sum(nums[mid+1:]):
-                return mid
-            elif sum(nums[:mid]) < sum(nums[mid+1:]):
-                left = mid + 1
-            else:
-                right = mid-1
-
+        all = sum(nums)
+        temp = 0
+        for i in range(1,len(nums)):
+            temp += nums[i-1]
+            if temp * 2 + nums[i] == all:
+                return i
         return -1
+
 if __name__ == '__main__':
     nums = [1, 7, 3, 6, 5, 6]
-    nums1 = [1,3, 2, 3, 6]
+    nums1 = [-1,-1,-1,-1,0,1]
     print(Solution().pivotIndex(nums1))

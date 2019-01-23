@@ -4,7 +4,7 @@ z字型变换
 
 题目：https://leetcode-cn.com/problems/zigzag-conversion/
 
-方法一
+使用的是方法一
 
 答案：https://blog.csdn.net/xinxin100011/article/details/81258144
 
