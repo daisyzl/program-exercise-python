@@ -1,13 +1,21 @@
 #-*-coding:utf-8-*-
 '''
- 反转链表
+反转链表
 
- 思想：迭代方法
+思想：迭代方法
 
- 题目：https://leetcode-cn.com/explore/learn/card/linked-list/195/classic-problems/750/
+反转一个单链表。
 
- 答案：https://www.cnblogs.com/songzhenhua/p/9652292.html
+示例:
 
+输入: 1->2->3->4->5->NULL
+输出: 5->4->3->2->1->NULL
+进阶:
+你可以迭代或递归地反转链表。你能否用两种方法解决这道题？
+
+题目：https://leetcode-cn.com/explore/learn/card/linked-list/195/classic-problems/750/
+
+答案：https://www.cnblogs.com/songzhenhua/p/9652292.html
 
 '''
 

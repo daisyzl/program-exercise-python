@@ -3,6 +3,8 @@
 '''
 删除链表的倒数第N个节点
 
+这道题和合并两个有序链表联系起来学习
+
 题目：https://leetcode-cn.com/explore/learn/card/linked-list/194/two-pointer-technique/747/
 
 答案：https://blog.csdn.net/iyuanshuo/article/details/79600168
@@ -29,49 +31,27 @@ class ListNode():
         self.val = val
         self.next = next
 
-class Solution(object):
+class Solution:
     def removeNthFromEnd(self, head, n):
-        if head.next == None:
-            return []
-        else:
-            A = head
-            B = head
-            for i in range(n):
-                A = A.next
-            if A == None:
-                return head.next
-            while A.next:
-                A = A.next
-                B = B.next
-            B.next = B.next.next
-        return head
-
-    def removeNthFromEnd2(self, head, n):
-        dummy = ListNode(0)
-        dummy.next = head
-        p1 = p2 = dummy
+        """
+        :type head: ListNode
+        :type n: int
+        :rtype: ListNode
+        """
+        new_list = ListNode(0)
+        pre = new_list
+        slow = fast = pre
+        pre.next = head
         for i in range(n):
-            p1 = p1.next
-        while p1.next:
-            p1 = p1.next
-            p2 = p2.next
-        p2.next = p2.next.next
-        return dummy.next
+            fast = fast.next
+        while fast.next:
+        #注意循环的条件是p1.next
+            fast = fast.next
+            slow = slow.next
+        slow.next = slow.next.next
+        return new_list.next
 
-    def removeNthFromEnd3(self, head, n):
-        p = head
-        q = head
-        index = 0
-        while index != n:
-            p = p.next
-            index += 1
-        if p == None:
-            return head.next
-        while p.next != None:
-            p = p.next
-            q = q.next
-        q.next = q.next.next
-        return head
+
 
 
 
@@ -83,7 +63,7 @@ if __name__ == '__main__':
     head1.next = n1
     n1.next = n2
     n2.next = n3
-    result = Solution().removeNthFromEnd3(head1, 2)
+    result = Solution().removeNthFromEnd(head1, 2)
     while result != None:
         print(result.val)
         result = result.next

@@ -1,38 +1,28 @@
 #-*-coding:utf-8-*-
-class ListNode(object):
+class ListNode():
     def __init__(self, x):
         self.val = x
         self.next = None
 
-class Solution(object):
+class Solution():
     def mergeTwoLists(self, l1, l2):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
-        if l1 is None or l2 is None:
-             return None
-        pre = ListNode(0)
-        new_list = pre
-        while l1 is not None and l2 is not None:
-            if l1.val <= l2.val:
-                pre.next = ListNode(l1.val)
-                # print(pre.val)
-                l1 = l1.next
-                # print("111111111")
-            else:
-                pre.next = ListNode(l2.val)
-                # print(pre.val)
-                l2 = l2.next
-                # print("222222222")
+        if l1 is None and l2 is None:
+            return None
+        new_list = ListNode(0)
+        pre = new_list
 
+        while l1 is not None and l2 is not None:
+            if l1.val < l2.val:
+                pre.next = l1
+                l1 = l1.next
+            else:
+                pre.next = l2
+                l2 = l2.next
             pre = pre.next
-        if l1 is None:
-            pre.next = l2
-            # print("3333333")
-        elif l2 is None:
+        if l1 is not None:
             pre.next = l1
+        else:
+            pre.next = l2
         return new_list.next
 
 if __name__ == '__main__':
@@ -52,9 +42,10 @@ if __name__ == '__main__':
     m1.next = m2
     m2.next = m3
 
-    result=Solution().mergeTwoLists(head1,head2)
-    while result.next is not None:
-        # print("dadad")
-
-        result=result.next
+    result = Solution().mergeTwoLists(head1, head2)
+    while result:
         print(result.val)
+        result = result.next
+
+
+

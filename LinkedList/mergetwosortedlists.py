@@ -48,6 +48,7 @@ class Solution(object):
                 pre.next = l2
                 l2 = l2.next
             pre = pre.next
+            #注意这段不要忘了
         #l2已经全部排序只剩l1
         if l1 is not None:
             pre.next = l1
@@ -73,8 +74,8 @@ if __name__ == '__main__':
     m2.next = m3
 
     result=Solution().mergeTwoLists(head1,head2)
-    while result.next is not None:
-
-        result=result.next
+    while result:
         print(result.val)
+        result=result.next
+
 
