@@ -22,4 +22,5 @@ if __name__=='__main__':
     t = threading.Thread(target=loop(), name='LoopThread')
     t.start()
     t.join()
+    #join所完成的工作就是线程同步，即主线程任务结束之后，进入阻塞状态，一直等待其他的子线程执行结束之后
     print('thread %s ended ',threading.current_thread().name)
