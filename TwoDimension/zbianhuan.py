@@ -52,6 +52,7 @@ class Solution:
         dir = False
         #初始化dir 方向一定要是false
         result = [""] * min(numRows, len(s))
+        #初始化定义一个字符串
         for c in s:
             result[n] += c
             if n == 0 or n == numRows - 1:

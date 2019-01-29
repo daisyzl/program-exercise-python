@@ -40,6 +40,7 @@ class Solution:
         if not matrix:
             return
         result = []
+        #注意这里定义二维数组
         m, n = len(matrix), len(matrix[0])
         x1, y1, x2, y2 = 0, 0, m-1, n-1
         #注意m-1, n-1 下面方便好计算

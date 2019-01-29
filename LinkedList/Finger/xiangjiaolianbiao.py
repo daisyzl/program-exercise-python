@@ -23,6 +23,9 @@ class Solution():
         while pB:
             pB = pB.next
             lenB += 1
+        pA = headA
+        pB = headB
+        #别忘了指针从头开始，刚才是指向了最后了
         if lenA > lenB:
             for i in range(lenA - lenB):
                 pA = pA.next
@@ -33,4 +36,5 @@ class Solution():
             pA = pA.next
             pB = pB.next
         return pA
+        #无论时候相交，pA都有最后的值
 

@@ -29,7 +29,7 @@
 class ListNode():
     def __init__(self, val):
         self.val = val
-        self.next = next
+        self.next = None
 
 class Solution:
     def removeNthFromEnd(self, head, n):
@@ -50,6 +50,18 @@ class Solution:
             slow = slow.next
         slow.next = slow.next.next
         return new_list.next
+
+    #下面是我自己写的，不用新增new_list
+    def deleteNode(self,head,n):
+        fast ,slow = head, head
+        for i in range(n):
+            fast = fast.next
+        while fast.next:
+            fast = fast.next
+            slow = slow.next
+        slow.next = slow.next.next
+
+        return head
 
 
 

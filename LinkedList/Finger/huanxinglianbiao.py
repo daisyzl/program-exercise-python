@@ -21,7 +21,8 @@ class Solution(object):
         if head is None:
             return False
         slow, fast = head, head
-        while fast.next is not None and fast.next.next is not None:
+        while fast.next  and fast.next.next:
+            #双指针用fast.next
             fast = fast.next.next
             slow = slow.next
             if fast == slow:

@@ -3,6 +3,8 @@
 '''
 环形链表 II
 
+需要有三个节点
+
 题目：https://leetcode-cn.com/explore/learn/card/linked-list/194/two-pointer-technique/745/
 
 答案：https://blog.csdn.net/sun_white_boy/article/details/82845791
@@ -22,10 +24,14 @@ class Solution():
             return
         slow, fast = head
         while fast.next.next != None and fast.next != None:
+            fast = fast.next.next
+            slow = slow.next
             if fast == slow:
+                #此时快慢指针相交
                 p = head
-                while p.next != slow.next:
+                #第三个指针从头结点开始
+                while p != slow:
                     p = p.next
-                    slow =slow.next
-                return p.next
+                    slow = slow.next
+                return p
         return None

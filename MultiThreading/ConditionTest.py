@@ -3,6 +3,11 @@
 import threading
 import time
 
+'''
+注意执行的时候先运行notify再运行wait
+
+'''
+
 if __name__ == '__main__':
 
     # 商品

@@ -8,10 +8,10 @@ class Solution():
     def mergeTwoLists(self, l1, l2):
         if l1 is None and l2 is None:
             return None
+
         new_list = ListNode(0)
         pre = new_list
-
-        while l1 is not None and l2 is not None:
+        while l1 and l2:
             if l1.val < l2.val:
                 pre.next = l1
                 l1 = l1.next
@@ -19,10 +19,12 @@ class Solution():
                 pre.next = l2
                 l2 = l2.next
             pre = pre.next
-        if l1 is not None:
-            pre.next = l1
-        else:
+
+        if l1.val is None:
             pre.next = l2
+
+        else:
+            pre.next = l1
         return new_list.next
 
 if __name__ == '__main__':
