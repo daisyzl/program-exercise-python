@@ -3,6 +3,8 @@
 
 字符串的排列
 
+思想：滑动窗口
+
 给定两个字符串 s1 和 s2，写一个函数来判断 s2 是否包含 s1 的排列。
 换句话说，第一个字符串的排列之一是第二个字符串的子串。
 
@@ -20,6 +22,7 @@
 注意：
 
 输入的字符串只包含小写字母
+
 两个字符串的长度都在 [1, 10,000] 之间
 
 https://leetcode-cn.com/explore/interview/card/bytedance/242/string/1016/
@@ -49,6 +52,7 @@ class Solution:
                 return True
             cnt2[ord(s2[i - len(s1) + 1]) - ord('a')] -= 1
             #为了使窗口进行移动
+            #注意这个窗口大小的移动关键点
         return False
 
 if __name__ == '__main__':
