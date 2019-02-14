@@ -30,7 +30,15 @@ class Solution:
         """
         listNum = list(nums)
         listNum.sort()
-        sum = 0
+        sum1 = 0
+        #这个sum变量不能随便用，容易与sum函数起冲突
+        #当这两个名称重复时，程序会默认调用Int型对象，但Int对象没有什么调用可言，就爆出了这个错误，解决方法也很简单，要么更改变量名，要么更改方法名。TypeError: 'int' object is not callable
+        result = listNum[::2]
+        print(sum(result))
         for i in range(0, len(listNum), 2):
-            sum += listNum[i]
+            sum1 += listNum[i]
         return sum
+if __name__ == '__main__':
+    nums = [1,4,3,2]
+    print(sum(nums[::2]))
+    print(Solution().arrayPairSum(nums))

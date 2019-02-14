@@ -8,6 +8,11 @@ https://leetcode-cn.com/explore/orignial/card/all-about-array/232/two-pointers/9
 
 解题思路：对撞指针法，又叫做双索引法，两个指针从左从右相遇
 
+循环条件：while left < right:
+
+
+差异：双向指针，这个指针都是从头开始，向左向右
+
 O(n)的时间复杂度
 
 解题答案：

@@ -7,6 +7,11 @@
 思想：双向指针，这个指针都是从头开始，向左向右
 时间复杂度：O(n）
 
+循环条件：    与对撞指针的差异
+while l <= r and r < n:
+
+主要学习自己的编程思想
+
 题目：
 https://leetcode-cn.com/explore/featured/card/all-about-array/233/sliding-window/971/
 
@@ -68,4 +73,4 @@ class Solution():
 if __name__ == '__main__':
     nums = [2,3,1,2,4,3]
     s = 7
-    print(Solution().minSubArrayLen(nums, s))
+    print(Solution().minSubArrayLen2(nums, s))
