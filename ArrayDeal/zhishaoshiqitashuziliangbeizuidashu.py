@@ -3,6 +3,8 @@
 
 至少是其他数字两倍的最大数
 自己写的
+主要是学习python的列表乘法语法，可以不用写，暴力方法
+
 题目：https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/
 
 在一个给定的数组nums中，总是存在一个最大元素 。
@@ -50,8 +52,27 @@ class Solution:
             return nums.index(m)
         return -1
 
+    def dominantIndex2(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        a = max(nums) * 2
+        print(a)
+        print(nums * 2)
+        #注意将字符串和列表与数x相乘时，将重复这个序列x次来创建一个新序列
+        print(max(nums * 2 ))
+
+        if a == max([ x*2 for x in nums]):
+            #这个方法很好，利用列表对list与数进行乘法运算
+            return nums.index(max(nums))
+        else:
+            return -1
+
+
+
 
 if __name__ == "__main__":
-    nums=[3, 6, 1, 0]
+    nums=[0,0,2,3]
     nums1 = [0,0,0,1]
-    print(Solution().dominantIndex(nums1))
+    print(Solution().dominantIndex3(nums))

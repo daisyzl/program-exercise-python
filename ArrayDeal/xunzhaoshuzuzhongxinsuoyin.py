@@ -2,6 +2,7 @@
 '''
 寻找数组的中心索引
 
+提示：可以不用写，按照暴力方法就可解决问题，对于此类问题，可以了解解题思路即可
 
 思想：可知道如果存在中心索引的话，那么左边的和的二倍，加上中心索引的值，即等于数组和
 
@@ -50,6 +51,20 @@ class Solution():
             if temp * 2 + nums[i] == all:
                 return i
         return -1
+
+    #自己的想法
+    def pivotIndex1(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        n = len(nums)
+        for i in range(n):
+            if sum(nums[:i])== sum(nums[i+1:]):
+                return i
+        return -1
+
+
 
 if __name__ == '__main__':
     nums = [1, 7, 3, 6, 5, 6]
