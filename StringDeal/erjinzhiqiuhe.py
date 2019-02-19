@@ -17,6 +17,8 @@
 输入: a = "1010", b = "1011"
 输出: "10101"
 
+int的思想
+https://www.cnblogs.com/wushuaishuai/p/7677992.html
 '''
 
 class Solution:
@@ -27,7 +29,7 @@ class Solution:
         :rtype: str
         """
         a_bin = int(a, 2)
-        #把字符串转换为2进制整数
+        #把字符串转换为10进制整数，认为a无论是字符串还是数字是二进制的形式
         b_bin = int(b, 2)
         result = bin(a_bin + b_bin)
         print(result)
@@ -35,8 +37,15 @@ class Solution:
         return bin(int(a, 2) + int(b, 2))[2:]
         #要把0b去掉
 
+
+    def addBinary2(self, a, b):
+        n , m = int(a,2),int(b,10)
+        print("qqqqqqq")
+        print(n)
+        return bin(n+m)[2:]
+
 if __name__ == '__main__':
     a = '11'
     b = '1'
 
-    print(Solution().addBinary(a, b))
+    print(Solution().addBinary2(a, b))

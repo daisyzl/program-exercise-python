@@ -1,5 +1,10 @@
 #-*-coding:utf-8-*-
 '''
+
+转置矩阵
+
+题目：https://leetcode-cn.com/problems/transpose-matrix/submissions/
+
 zip函数接受任意多个可迭代对象作为参数,将对象中对应的元素打包成一个tuple,然后返回一个可迭代的zip对象.
 
 这个可迭代对象可以使用循环的方式列出其元素
@@ -46,6 +51,11 @@ if __name__ == '__main__':
 
     for i in zip(l1):
         print(i)
+
+    for i in zip(*l1):
+        print("qqqq")
+        print(i)
+        #这样输出为tuple，需要list(i)
 
     '''
     ([1, 2, 3],)

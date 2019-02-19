@@ -3,6 +3,8 @@
 螺旋矩阵
 题目：https://leetcode-cn.com/explore/learn/card/array-and-string/199/introduction-to-2d-array/775/
 
+先定位两个点，分别是左上x1,y1和右下x2,y2
+
 答案：https://github.com/luliyucoordinate/Leetcode/blob/master/src/0054-Spiral-Matrix/0054.py
 
 思想：https://blog.csdn.net/qq_17550379/article/details/83148050

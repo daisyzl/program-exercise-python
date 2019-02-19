@@ -35,6 +35,27 @@ class Solution:
             max_length = max(max_length, cnt)
         return max_length
 
+
+    #下面这个算法有问题
+    def findMaxConsecutiveOnes2(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        l , r= 0, 0
+        temp = [0]
+        while l <= r and r<len(nums):
+            if nums[r] != 1:
+                temp.append(r-l)
+                print("l,r",l,r)
+                print(temp)
+                l = r+1
+            r += 1
+        if nums.count(1) == len(nums):
+            return len(nums)
+        return max(temp)
+
 if __name__ == '__main__':
     nums = [1,0,1,1,0,1]
-    print(Solution().findMaxConsecutiveOnes(nums))
+    nums1 = [0, 1]
+    print(Solution().findMaxConsecutiveOnes2(nums1))

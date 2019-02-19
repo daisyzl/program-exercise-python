@@ -2,6 +2,8 @@
 '''
 加一
 
+这道题值得借鉴，多写写
+
 题目：https://leetcode-cn.com/explore/learn/card/array-and-string/198/introduction-to-array/772/
 
 答案：https://blog.csdn.net/qq_34364995/article/details/80284300
@@ -43,10 +45,24 @@ class Solution:
             #注意取倒数第一个数
         return digits
 
+    def plusOne2(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        n = len(digits)
+        if digits[-1] != 9:
+            digits[-1] += 1
+        else:
+            digits = self.plusOne(digits[:-1])
+            digits.append(0)
+        return digits
+
 if __name__ == '__main__':
-    digits = [4, 3, 2, 1]
+    digits = [9]
+    digits2 = [4, 3, 9]
     print(digits[-1: -3])
     #这样输出的结果为空
     print(digits[-3:-1])
     #[3, 2]
-    print(Solution().plusOne(digits))
+    print(Solution().plusOne2(digits))

@@ -24,10 +24,10 @@ class Solution:
         :rtype: List[int]
         """
         p = [1]
-
+        #别忘了在这里进行初始化
         if not rowIndex:
             return rowIndex
-        for j in range(rowIndex):
+        for j in range(1,rowIndex):
             p = [1] + [p[i] + p[i+1] for i in range(len(p) - 1)] + [1]
         return p
 
@@ -45,4 +45,4 @@ class Solution:
         return p
 
 if __name__ == '__main__':
-    print(Solution().getRow1(5))
+    print(Solution().getRow(3))

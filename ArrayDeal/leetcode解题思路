@@ -2,3 +2,29 @@ https://shenjie1993.gitbooks.io/leetcode-python/006%20ZigZag%20Conversion.html
 
 https://github.com/luliyucoordinate/Leetcode
 所有题的解题思路
+
+数组
+1. 加一（迭代）
+
+2. 杨辉三角和杨辉三角2（map）
+
+3. 转置矩阵（zip） 可以多看一下
+
+4. 二进制求和（int）
+
+5. 实现strstr（主要是方法二）
+
+6. 最长公共前缀（学习该思想，多练）
+
+7. 翻转字符串II（切片）
+
+8. 最大连续1的个数（连续数的计算）
+
+9. 长度最小子数组（三种方法需要学习），方法一和方法二暂放
+
+10. 旋转数组（三种方法）包含insert的使用以及切片的使用
+
+11. 翻转字符串的单词（对字符串方法的练习）
+
+12.移动零（append和extend的区别）
+

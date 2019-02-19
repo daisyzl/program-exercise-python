@@ -30,6 +30,7 @@ class Solution:
             return ""
         if len(strs) == 1:
             return strs[0]
+        #注意这个返回的是strs[0],不是strs
         minl = min([len(x) for x in strs])
         end = 0
         while end < minl:

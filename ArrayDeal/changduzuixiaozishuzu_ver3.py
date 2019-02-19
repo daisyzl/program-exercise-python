@@ -53,6 +53,7 @@ class Solution():
     def minSubArrayLen2(self, nums, s):
         l, r = 0, 0
         min_temp = len(nums)+1
+        #注意这里一定要在长度的基础上加1
         while l<=r and r<len(nums):
             #这个while循环有容易出错的地方，如果left < len(nums)会造成死循环,思考死循环的原因
             if sum(nums[l:r+1]) >= s:
