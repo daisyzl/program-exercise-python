@@ -38,13 +38,17 @@ class Solution():
         left = 0
         right = len(nums)-1
         while left <= right:
-            mid = (left + right)//2
+            print left, right
+            if left == right:
+                return left
+            mid = (left+right) // 2
+            # 如果中间小于右边，那么一定在右边
             if nums[mid] < nums[mid+1]:
-                #给定一个输入数组 nums，其中 nums[i] ≠ nums[i+1]
                 left = mid + 1
+            # 左边不小于右边，那么直接把右边弄到中间
             else:
-                right = mid - 1
-        return left
+                # right不可以是mid-1，万一正好是mid，就跳过了，因为并没有比对mid的值
+                right = mid
 
 if __name__ == "__main__":
     nums = [1,2,1,3,5,6,4]

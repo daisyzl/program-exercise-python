@@ -1,4 +1,9 @@
 #-*-coding:utf-8-*-
+'''
+题目：https://leetcode-cn.com/problems/remove-element/
+
+'''
+
 
 class Solution:
     def removeElement(self, nums, val):

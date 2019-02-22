@@ -45,16 +45,24 @@ class Solution:
             mid = (low + high) // 2
             if target == nums[mid]:
                 return mid
-
+            #判断目标值在哪个有序列表里
             if nums[low] <= nums[mid]:
                 if nums[low] <= target <= nums[mid]:
+                    print("aaaa")
                     high = mid-1
                 else:
+                    print("bbbb")
                     low = mid + 1
             else:
                 if nums[mid] <= target <= nums[high]:
+                    print("cccc")
                     low = mid + 1
                 else:
+                    print("dddd")
                     high = mid - 1
 
         return -1
+if __name__ == '__main__':
+    nums = [4, 5, 6, 7, 0, 1, 2]
+    target = 0
+    print(Solution().search(nums, target))

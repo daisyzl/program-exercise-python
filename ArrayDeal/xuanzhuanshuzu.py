@@ -71,4 +71,4 @@ class Solution:
 if __name__ == '__main__':
     k = 3
     nums =[1,2,3,4,5,6,7]
-    print(Solution().rotate(nums, k))
+    print(Solution().rotate2(nums, k))

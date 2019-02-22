@@ -26,6 +26,8 @@ class ListNode:
 
 class Solution():
         def reverseList(self, head):
+            if not head:
+                return
             pre = head
             cur = pre.next
             pre.next = None
@@ -34,8 +36,10 @@ class Solution():
             while cur:
                 temp = cur.next
                 cur.next = pre
+                #第一和第二之间的交换
                 pre = cur
                 cur = temp
+                #其他三行是第二 和第三往前进一位
             #从原链表的第二个节点开始遍历到最后一个节点，将所有节点翻转一遍
             return pre
 

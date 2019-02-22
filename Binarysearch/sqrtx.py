@@ -44,5 +44,11 @@ class Solution:
                 l = mid+1
             else:
                 r = mid-1
+            print("l,r",l,r)
         return r
-    #注意最后不符合条件返回的是r
+    #注意最后不符合条件返回的是r，找8这个数分析一下
+
+if __name__ == '__main__':
+
+    x = 8
+    print(Solution().mySqrt(x))

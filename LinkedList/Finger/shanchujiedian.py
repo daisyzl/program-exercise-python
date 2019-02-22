@@ -39,6 +39,7 @@ class Solution:
         :rtype: ListNode
         """
         new_list = ListNode(0)
+        #增加一个新的节点是为了解决head=1，n=1的情况
         pre = new_list
         slow = fast = pre
         pre.next = head
@@ -51,8 +52,8 @@ class Solution:
         slow.next = slow.next.next
         return new_list.next
 
-    #下面是我自己写的，不用新增new_list
-    def deleteNode(self,head,n):
+    #下面是我自己写的，不用新增new_list，但是写错了
+    def deleteNode1(self,head,n):
         fast ,slow = head, head
         for i in range(n):
             fast = fast.next
@@ -75,7 +76,7 @@ if __name__ == '__main__':
     head1.next = n1
     n1.next = n2
     n2.next = n3
-    result = Solution().removeNthFromEnd(head1, 2)
+    result = Solution().removeNthFromEnd1(head1, 1)
     while result != None:
         print(result.val)
         result = result.next

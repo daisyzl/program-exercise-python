@@ -4,7 +4,7 @@
 '''
  反转链表
 
- 思想：递归方法
+ 思想：递归方法（比较难）
 
  题目：https://leetcode-cn.com/explore/learn/card/linked-list/195/classic-problems/750/
 

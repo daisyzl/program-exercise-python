@@ -43,6 +43,8 @@ if __name__ == '__main__':
     result = [[j[i] for j in l1] for i in range(len(l1[0]))]
     print(result)
 
+    result = [[j[i] for j in l1] for i in range(len(l1[0]))]
+
     for i in range(len(l1[0])):
         for j in l1:
             print(j[i])
