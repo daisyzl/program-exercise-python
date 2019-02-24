@@ -42,6 +42,16 @@ class Solution(object):
                 return False
         return True
 
+    def isPalindrome2(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        #不知道为什么leetcode无法通过
+        s_filter = ''.join(filter(str.isalnum, s)).lower()
+        #主要学习filter
+        # isalnum() 方法检测字符串是否由字母和数字组成
+        return s_filter[::-1] == s_filter
 
 if __name__ == '__main__':
     s = "A man, a plan, a canal: Panama"

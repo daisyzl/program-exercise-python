@@ -28,6 +28,7 @@ if __name__ == '__main__':
             li[right]=li[left]
         li[left]=x
         quick_sort(li,low,left-1)
+        #注意中间的那个数不用再经过排序了
         quick_sort(li,left+1,high)
 
 

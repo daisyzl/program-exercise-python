@@ -33,6 +33,8 @@ class Solution:
         # isalnum() 方法检测字符串是否由字母和数字组成
         return s_filter[::-1] == s_filter
 
+
+
 if __name__ == '__main__':
     s = "A man, a plan, a canal: Panama"
     s1 = "race a car"
