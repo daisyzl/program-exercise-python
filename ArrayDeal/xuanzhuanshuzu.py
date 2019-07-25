@@ -40,6 +40,7 @@ numbers[8:3:-1]
 '''
 
 class Solution:
+    #在leetcode运行不过去，方法一
     def rotate(self, nums, k):
         """
         :type nums: List[int]
@@ -71,4 +72,4 @@ class Solution:
 if __name__ == '__main__':
     k = 3
     nums =[1,2,3,4,5,6,7]
-    print(Solution().rotate2(nums, k))
+    print(Solution().rotate(nums, k))

@@ -38,11 +38,13 @@ class Solution(object):
             mid = (l+r)//2
             if nums[mid] == target:
                 l=r=mid
+                #这个等式是最关键的
                 while l-1>=0 and nums[l-1]==target:
                     l-=1
                 while r+1<len(nums) and nums[r+1] == target:
                     r+=1
                 return [l,r]
+            #以上我们继续分头向前向后循环，直到找到不等于target的值，此时就能找到我们需要的索引对
             elif nums[mid]<target:
                 l = mid+1
             else:

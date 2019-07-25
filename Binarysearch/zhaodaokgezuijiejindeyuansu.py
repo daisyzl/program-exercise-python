@@ -29,3 +29,21 @@ k 的值为正数，且总是小于给定排序数组的长度。
 
 '''
 
+class Solution(object):
+    #方法一双指针法
+    def findClosestElements(self, arr, k, x):
+        """
+        :type arr: List[int]
+        :type k: int
+        :type x: int
+        :rtype: List[int]
+        """
+        while len(arr)>k:
+            if x-arr[0]<=arr[-1]-x:
+                arr.pop()
+            else:
+                arr.pop(0)
+        return arr
+
+    #方法二
+

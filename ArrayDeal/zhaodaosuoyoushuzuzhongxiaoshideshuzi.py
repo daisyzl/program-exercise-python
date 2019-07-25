@@ -1,6 +1,6 @@
 #-*-coding:utf-8-*-
 '''
-三个数的最大乘积
+找到所有数组中消失的数字
 
 题目：https://leetcode-cn.com/problems/find-all-numbers-disappeared-in-an-array/
 
