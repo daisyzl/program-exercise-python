@@ -25,7 +25,12 @@
 输出: [4,3,2,2]
 解释: 输入数组表示数字 4321。
 
-备注：两个方法一样，第二种少一层判断
+备注：第二种方法无法使用
+分两种情况：
+1）加1以后小于9。
+2）加1以后大于9。但是这个情况又涉及两种情况：
+a.digits只有一个元素，所以在index=0插入1。
+b.相加以后产生进位，若将进位加到前面一位数仍产生进位怎么处理。
 
 '''
 
@@ -55,7 +60,7 @@ class Solution:
         if digits[-1] != 9:
             digits[-1] += 1
         else:
-            digits = self.plusOne(digits[:-1])
+            digits = self.plusOne2(digits[:-1])
             digits.append(0)
         return digits
 

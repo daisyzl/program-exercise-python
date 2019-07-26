@@ -36,7 +36,7 @@ class Solution:
         result = []
         for i in range(numRows):
             temp = [0] * (i + 1)
-            #先对一行数据进行定义
+            #先对一行数据进行定义，因为要对最后一个数赋值1
             temp[0], temp[-1] = 1, 1
             for j in range(1, i):
                 temp[j] = result[i-1][j-1] + result[i-1][j]
