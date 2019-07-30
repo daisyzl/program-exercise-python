@@ -6,9 +6,7 @@ https://github.com/luliyucoordinate/Leetcode
 一维数组
 1. 加一（迭代）
 
-3. 转置矩阵（zip） 可以多看一下
-
-4. 二进制求和（int）
+2. 二进制求和（int）
 
 5. 实现strstr（主要是方法二）
 
@@ -48,6 +46,9 @@ https://github.com/luliyucoordinate/Leetcode
 
 二维数组
 1.杨辉三角和杨辉三角2（map） 多练一下
+
+2.转置矩阵（zip） 可以多看一下
+
 
 
 二分法

@@ -43,7 +43,11 @@ class Solution:
         if len(digits) == 0:
             digits = [1]
         elif digits[-1] == 9:
+            print('aaa')
+            print(digits[:-1])
             digits = self.plusOne(digits[:-1])
+            print('xxxxx')
+            print(digits)
             #倒数前一位数之前
             digits.append(0)
         else:
@@ -67,8 +71,8 @@ class Solution:
 if __name__ == '__main__':
     digits = [9]
     digits2 = [4, 3, 9]
-    print(digits[-1: -3])
+    print(digits2[-1: -3])
     #这样输出的结果为空
-    print(digits[-3:-1])
+    print(digits2[-3:-1])
     #[3, 2]
-    print(Solution().plusOne2(digits))
+    print(Solution().plusOne(digits))
