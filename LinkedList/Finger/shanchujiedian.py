@@ -24,6 +24,18 @@
 
 你能尝试使用一趟扫描实现吗？
 
+思路：
+快指针先比慢指针先走n步
+两者同时往后移动，直至快指针移动至末节点，此时慢指针指向倒数n+1个节点
+将慢指针的next指向下一个节点的next，即删除了倒数第n个节点
+代码中为了方便处理边界情况，先往链首增加了一个节点(慢指针需指向倒数n+1,当n等于链表长度时，会溢出，故增加一个节点)
+
+链接：https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/solution/yi-ci-bian-li-kong-jian-huan-shi-jian-by-essen/
+。
+
+动画：https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/solution/dong-hua-tu-jie-leetcode-di-19-hao-wen-ti-shan-chu/
+
+获取空节点的下一个节点将导致空指针错误。例如，在我们运行 fast = fast.next.next 之前，需要检查 fast 和 fast.next 不为空
 '''
 
 class ListNode():
@@ -51,6 +63,24 @@ class Solution:
             slow = slow.next
         slow.next = slow.next.next
         return new_list.next
+
+    # 新的方法，比较好理解
+    def removeNthFromEnd1(self, head, n):
+        if head is None:
+            return
+        p = ListNode(0)
+        p.next, head = head, p
+        # 为了把第一个节点添加进去
+        slow, fast = head, head
+        for i in range(n):
+            fast = fast.next
+        while fast.next:
+            slow = slow.next
+            fast = fast.next
+        slow.next = slow.next.next
+        return head.next
+        # 去掉新加入的第一个节点
+
 
     #下面是我自己写的，不用新增new_list，但是写错了
     def deleteNode1(self,head,n):

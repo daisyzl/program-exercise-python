@@ -22,6 +22,7 @@ class Solution(object):
             return False
         slow, fast = head, head
         while fast.next  and fast.next.next:
+            # 注意一定是fast.next和fast.next.next
             #双指针用fast.next
             fast = fast.next.next
             slow = slow.next

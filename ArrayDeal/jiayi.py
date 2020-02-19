@@ -28,6 +28,7 @@
 
 '''
 
+
 class Solution:
     def plusOne(self, digits):
         """
@@ -57,6 +58,7 @@ class Solution:
             digits = self.plusOne(digits[:-1])
             digits.append(0)
         return digits
+
 
 if __name__ == '__main__':
     digits = [9]

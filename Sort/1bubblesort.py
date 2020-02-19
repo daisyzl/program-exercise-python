@@ -6,16 +6,32 @@
 由小到大，大数先被冒泡出来
 
 '''
+from random import randint
 
 if __name__ == '__main__':
-    # data=[5,24,45,66,8,3,88,70]
-    data=[3,4,1]
+    # data=[3, 90, 196, 206, 241, 263, 665, 719, 892, 914]
+    data = [randint(1, 999) for i in range(10)]
+    # data = [3,4,1]
     def bubbleSort(data):
-        for i in range(1,len(data)):
+        for i in range(0,len(data)):
             #i 计算需要多少次循环
-            for j in range(0,len(data)-i):
+            for j in range(0,len(data)-i-1):
                 #j 找到每个列表的位置
                 if data[j]>data[j+1]:
                     data[j],data[j+1]=data[j+1],data[j]
         return data
     print(bubbleSort(data))
+    # def bubbleSort(data):
+    #     cnt = 0
+    #     for i in range(1,len(data)):
+    #         #i 计算需要多少次循环
+    #         cnt += 1
+    #         if cnt < 3:
+    #             for j in range(0,len(data)-i):
+    #                 #j 找到每个列表的位置
+    #                 if data[j]< data[j+1]:
+    #                     data[j],data[j+1]=data[j+1],data[j]
+    #         else:
+    #             return data[len(data)-2]
+    # print(bubbleSort(data))
+

@@ -23,6 +23,7 @@ class Solution():
         while pB:
             pB = pB.next
             lenB += 1
+        # 计算链表长度的方法
         pA = headA
         pB = headB
         #别忘了指针从头开始，刚才是指向了最后了

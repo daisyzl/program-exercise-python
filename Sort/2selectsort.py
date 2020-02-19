@@ -13,6 +13,7 @@
 
 最优时间复杂度：O(n2)
 '''
+import random
 
 if __name__ == '__main__':
     # def select_sort(li):
@@ -24,27 +25,27 @@ if __name__ == '__main__':
     #                 li[min_index],li[j]=li[j],li[min_index]
     #     return li
 
-    def select_sort(li):
-        # cnt=len(li)
-        for i in range(len(li)-1):
-            min_index=i
-            for j in range(i+1,len(li)):
-                if li[min_index]>li[j]:
-                    li[min_index],li[j]=li[j],li[min_index]
-        return li
-
-#方法二
     # def select_sort(li):
-    #     for i in range(0, len(li) - 1):
-    #         min_index = i
-    #         for j in range(i + 1, len(li)):
-    #             if li[min_index] > li[j]:
-    #                 min_index = j
-    #         li[min_index], li[i] = li[i], li[min_index]
+    #     # cnt=len(li)
+    #     for i in range(len(li)-1):
+    #         min_index=i
+    #         for j in range(i+1,len(li)):
+    #             if li[min_index]>li[j]:
+    #                 li[min_index],li[j]=li[j],li[min_index]
     #     return li
 
+#方法二
+    def select_sort(li):
+        for i in range(0, len(li)):
+            min_index = i
+            for j in range(i, len(li)):
+                if li[min_index] > li[j]:
+                    min_index = j
+            li[min_index], li[i] = li[i], li[min_index]
+        return li
 
-    li = [99, 22, 64, 55, 11, 35, 89, 1, 2]
+
+    li = [random.randint(1, 999) for i in range(10)]
     print(select_sort(li))
 
 
