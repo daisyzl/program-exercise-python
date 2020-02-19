@@ -75,7 +75,7 @@ class Solution:
     def removeDuplicates2(self, nums):
         n = len(nums)
         return n - len([nums.pop(i) for i in range(n-1, 0, -1) if nums[i] == nums[i-1]])
-    #注意用range的倒序第二个为nums[1]
+    #注意用range的倒序第二个为nums[1]，一定要从后往前
     for i in range(10-1, -1 , -1):
         print(i)
     #注意这样写range可以访问到nums[0]

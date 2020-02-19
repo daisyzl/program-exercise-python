@@ -3,7 +3,11 @@
 '''
 寻找峰值
 
+题目：https://leetcode-cn.com/problems/find-peak-element/
+
 复杂度：O(logN)   用二分法
+
+答案：https://blog.csdn.net/qq_17550379/article/details/83780912
 
 思想：由于两端都是负无穷，因此只要左右两端任一端比中点大，意味着那一侧有峰
 
@@ -38,7 +42,7 @@ class Solution():
         left = 0
         right = len(nums)-1
         while left <= right:
-            print left, right
+            print (left, right)
             if left == right:
                 return left
             mid = (left+right) // 2

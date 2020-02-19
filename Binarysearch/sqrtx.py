@@ -45,6 +45,7 @@ class Solution:
             else:
                 r = mid-1
             print("l,r",l,r)
+        #相当于查找最后一个小于key的元素
         return r
     #注意最后不符合条件返回的是r，找8这个数分析一下
 

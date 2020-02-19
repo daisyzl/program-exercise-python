@@ -29,8 +29,10 @@ class Solution:
         :rtype: str
         """
         a_bin = int(a, 2)
+        print(a_bin)
         #把字符串转换为10进制整数，认为a无论是字符串还是数字是二进制的形式
         b_bin = int(b, 2)
+        print(b_bin)
         result = bin(a_bin + b_bin)
         print(result)
         #0b100
@@ -48,4 +50,4 @@ if __name__ == '__main__':
     a = '11'
     b = '1'
 
-    print(Solution().addBinary2(a, b))
+    print(Solution().addBinary(a, b))

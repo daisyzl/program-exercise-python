@@ -36,22 +36,20 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        for i in range(len(nums)):
-            if target == nums[i]:
-                return i
-        l , r = 0 , len(nums)-1
-        while l<=r:
+        l, r = 0, len(nums)-1
+        while l <=r:
             mid = (l+r)//2
-            print(mid)
-            if nums[mid]<target and nums[mid+1]>target:
-                print("dddd")
-                return mid+1
-            elif nums[mid]<target:
+            if nums[mid]<target:
                 l = mid+1
-            else:
-                print("wwww")
+            elif nums[mid]>target:
                 r = mid-1
-        return len(nums)
+            else:
+                print("bbbb")
+                return mid
+        print("ssss")
+        #如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+        return l
+
 if __name__ == '__main__':
     nums = [1,3,5,6]
     target = 2

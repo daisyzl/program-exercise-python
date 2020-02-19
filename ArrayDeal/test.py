@@ -1,29 +1,26 @@
 #-*-coding:utf-8-*-
 
 class Solution(object):
-    def lengthOfLongestSubstring(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        l, r = 0, 0
-        max_length = 0
-        s_list = list(s)
-        temp = []
-        while l <= r and l < len(s) and r< len(s):
-            if temp.count(s_list[r]) == 0:
-                print(s_list[r])
-                temp.append(s_list[r])
-                print(temp)
-                r += 1
-            else:
-                temp.remove(s_list[r])
-                l += 1
-
-            max_length = max(max_length, r - l)
-        if l == len(s):
-            return 1
-        return max_length
+    def plusOne(self, digits):
+        if digits[-1] == 9:
+            digits = self.plusOne(digits[:-1])
+            digits.append(0)
+        else:
+            digits[-1] += 1
+        return digits
+    def plusOne2(self, digits):
+        if digits[-1] != 9:
+            digits[-1] += 1
+        else:
+            digits = self.plusOne2(digits[:-1])
+            digits.append(0)
+        return digits
 
 if __name__ == '__main__':
-    print(Solution().lengthOfLongestSubstring('abcabcbb'))
+    digits = [9]
+    digits2 = [4, 3, 9]
+    print(digits[-1: -3])
+    #这样输出的结果为空
+    print(digits[-3:-1])
+    #[3, 2]
+    print(Solution().plusOne2(digits))

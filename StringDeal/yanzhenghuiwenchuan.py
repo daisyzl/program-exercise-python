@@ -31,6 +31,8 @@ class Solution:
         s_filter = ''.join(filter(str.isalnum, s)).lower()
         #主要学习filter
         # isalnum() 方法检测字符串是否由字母和数字组成
+        #注意到filter()函数返回的是一个Iterator，也就是一个惰性序列，
+        # 所以要强迫filter()完成计算结果，需要用list()函数获得所有结果并返回list
         return s_filter[::-1] == s_filter
 
 

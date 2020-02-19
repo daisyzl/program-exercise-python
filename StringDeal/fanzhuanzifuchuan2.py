@@ -32,11 +32,15 @@ class Solution:
         :type k: int
         :rtype: str
         """
+        print("qqq")
+        print(s[5:3:-1])
+        print(s[:2][::-1])
+        # 步长为负数时，第一个索引可以比第二个索引小,s[:2][::-1]
         if len(s) <= k:
             return s[::-1]
         elif len(s) > k and len(s) <= 2*k:
-            print(s[:k:-1])
-            #步长为负数时，第一个索引必须比第二个索引大
+
+            #步长为负数时，第一个索引必须比第二个索引大,s[5:3:-1]
             s = s[:k][::-1] + s[k: ][::-1]
         else:
             s = s[:k][::-1] + s[k: 2*k][::-1] + self.reverseStr(s[2*k:], k)
