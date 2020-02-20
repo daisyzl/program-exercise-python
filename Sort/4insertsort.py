@@ -9,19 +9,34 @@
 最坏时间复杂度：O(n2)
 稳定性：稳定
 
-https://blog.csdn.net/qq_35164554/article/details/78911102
+https://www.runoob.com/python3/python-insertion-sort.html
+
+思想：
+把n个待排序的元素看成一个有序表和一个无序表，开始时有序表中只包含一个元素，无序表中包含n-1个元素，
+排序过程中每次从无序表中取出第一个元素，把它的排序码依次与有序元素的排序码进行比较，
+将它插入到有序表中的适当位置，使之成为新的有序表
+
+插入排序和希尔排序一起记忆
+
 '''
 
 if __name__ == '__main__':
-    def insert_sort(li):
-        cnt=len(li)
-        for i in range(1,cnt):
-            for j in range(i,0,-1):#这里的迭代简单,这里必须是0，因为最后迭代不等于0
-                if li[j]<li[j-1]:
-                    li[j],li[j-1]=li[j-1],li[j]
-                else:
-                    break
-        return li
+    def insert_sort(data):
+        for i in range(1, len(data)):
+            # 前一个数已经排序
+            key = data[i]
+            j = i-1
+            # key前面一个数的下标
+            # j >= 0 保证给key找插入位置不越界
+            # key < data[j] 待插入的位置没有找到
+            while(j >= 0 and key < data[j]):
+                data[j+1] = data[j]
+                # 将前一个数往后移一位
+                j -= 1
+            # 退出循环，找到位置 key >data[j],放到后面
+            data[j+1] = key
+        return data
+
 
 
     li = [99, 22, 64, 55, 11, 35, 89, 1, 2]

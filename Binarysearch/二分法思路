@@ -1,1 +1,19 @@
 二分查找  https://www.cnblogs.com/luoxn28/p/5767571.html
+
+二分查找（有序数组）
+1.递归方法
+2.非递归方法（推荐）
+
+思路：
+1.首先确定该数组的中间下标
+mid=(left+right)//2
+2.然后让需要查找的数 findVal 和 arr[mid] 比较
+2.1 findVal > arr[mid], 说明查找的数在mid的右边，需要递归的向右查找
+2.2 findVal < arr[mid], 说明要查找的数在mid的左边，需要递归的向左查找
+2.3 findVal == arr[mid], 说明找到，返回
+
+结束递归
+1.找到就结束递归
+2.递归完整个数组，任然没有找到findVal, 需要结束递归，当left>right就需要退出
+
+

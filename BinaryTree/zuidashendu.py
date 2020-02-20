@@ -17,7 +17,7 @@ function：二叉树的最大深度
    15   7
 返回它的最大深度 3 。
 题目：https://leetcode-cn.com/explore/learn/card/data-structure-binary-tree/3/solve-problems-recursively/12/
-答案：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/solution/er-cha-shu-de-zui-da-shen-du-by-leetcode/
+答案：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/solution/tu-jie-104-er-cha-shu-de-zui-da-shen-du-di-gui-pyt/
 '''
 class TreeNode(object):
     """ Definition of a binary tree node."""
